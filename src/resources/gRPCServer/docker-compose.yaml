@@ -1,0 +1,14 @@
+version: '3'
+services:
+  grpc-server:
+    network_mode: 'host'
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - AWS_PROFILE=
+    volumes:
+      - ~/.aws/:/root/.aws:ro
+    ports:
+      - '50051:50051'
+    command: ['yarn', 'start']

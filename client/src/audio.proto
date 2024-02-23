@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package audio;
+
+// Define the AudioStreamer service
+service AudioStreamer {
+    // Server streaming RPC method to stream audio data
+    rpc StreamAudio (stream AudioData) returns (stream AudioResponse) {}
+}
+
+// Define the AudioData message for streaming audio data
+message AudioData {
+    bytes audioData = 1;
+}
+
+// Define the AudioResponse message for response from the server
+message AudioResponse {
+    string message = 1;
+    // You can add more fields as needed
+}

@@ -1,0 +1,13 @@
+version: '3'
+services:
+  grpc-client:
+    network_mode: 'host'
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - COUNT_FREQUENCY=0
+      - WAV_FILE=
+    volumes:
+      - ~/.aws/:/root/.aws:ro
+    command: ['yarn', 'start']
