@@ -182,7 +182,7 @@ async function main() {
 }
 ```
 
-The main client function will determine the `TARGET` and `WAV_FILE` to be used. This client can be used both locally or with the deployed gRPC server. A `WAV_FILE` is required and can be stored in the `client\src` directory and will be copied over during the Docker build.
+The main client function will determine the `TARGET` and `WAV_FILE` to be used. This client can be used both locally or with the deployed gRPC server. A `WAV_FILE` is required and can be stored in the `client\src` directory and will be copied over during the Docker build. If the `WAV_FILE` is a stereo file with each channel a separate user, they will be muxed together when sent to the gRPC server. The result will be that the transcription is the combined result of both channels. If you want to get a single channel, you can modify the `ffmpeg` to only pass one channel, or separate the `WAV_FILE` before sending.
 
 ### ffmpeg Processing
 
