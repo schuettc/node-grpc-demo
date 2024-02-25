@@ -250,6 +250,8 @@ Once the `audioStream` has been created through `processFfmpeg`, when data arriv
 
 ## In Action
 
+![InActionOverview](/images/InActionOverview.png)
+
 In order to test this demo, you can either use it locally or through the deployed Fargate container.
 
 ### Deploying
