@@ -66,6 +66,7 @@ project.eslint.addOverride({
   rules: {
     '@typescript-eslint/no-require-imports': 'off',
     'import/no-extraneous-dependencies': 'off',
+    'import/no-unresolved': 'off',
   },
 });
 
